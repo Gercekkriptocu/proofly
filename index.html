@@ -8,6 +8,7 @@
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
     <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
     <link rel="stylesheet" href="styles.css" />
+    <link rel="icon" type="image/svg+xml" href="/proofly-star.svg" />
   </head>
   <body>
     <div class="noise"></div>
@@ -31,6 +32,7 @@
           <span class="microcopy">Free forever · Abstract ready</span>
         </div>
         <p class="connection-status" id="connectionStatus">Connect an Abstract wallet to generate a live proof.</p>
+        <div class="wallet-fallback" id="walletFallback"><span>No browser wallet detected. Load a public Abstract profile instead.</span><div><input id="publicAddressInput" placeholder="0x wallet address" /><button class="ghost-button" id="loadPublicBtn">Load profile</button></div></div>
         <div id="aura-react-root" class="hero-orbit"></div>
       </section>
 

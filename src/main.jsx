@@ -1,6 +1,7 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
 import './aura3d.css';
+import './appfix.css';
 import { ProtocolPanel } from './Protocol.jsx';
 
 const signals = [
@@ -55,7 +56,6 @@ function Aura3D() {
         {signals.map(signal => <button key={signal.label} className={`aura3d-signal ${active === signal.label ? 'selected' : ''}`} style={{ '--signal-color': signal.color, '--signal-angle': `${signal.angle}deg`, '--signal-lift': signal.lift }} onPointerDown={event => event.stopPropagation()} onClick={() => { setActive(signal.label); setAutoRotate(false); }}>{signal.label}</button>)}
       </div>
     </div>
-    <div className="aura3d-hud"><span>DRAG TO ROTATE</span><button onPointerDown={event => event.stopPropagation()} onClick={() => setAutoRotate(value => !value)}>{autoRotate ? 'AUTO · ON' : 'AUTO · OFF'}</button></div>
   </div>;
 }
 
