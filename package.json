@@ -4,6 +4,6 @@
   "version": "0.1.0",
   "type": "module",
   "scripts": { "dev": "vite", "build": "npm run compile:contract && vite build", "compile:contract": "node scripts/compile-contract.mjs", "deploy:mainnet": "npm run compile:contract && node scripts/deploy-mainnet.mjs", "preview": "vite preview" },
-  "dependencies": { "@vitejs/plugin-react": "latest", "vite": "latest", "react": "latest", "react-dom": "latest", "solc": "latest", "viem": "latest" },
+  "dependencies": { "@abstract-foundation/agw-react": "latest", "@abstract-foundation/agw-client": "latest", "@tanstack/react-query": "latest", "wagmi": "latest", "@vitejs/plugin-react": "latest", "vite": "latest", "react": "latest", "react-dom": "latest", "solc": "latest", "viem": "latest" },
   "devDependencies": {}
 }

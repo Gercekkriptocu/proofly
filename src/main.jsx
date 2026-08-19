@@ -1,5 +1,8 @@
 import React, { useEffect, useRef, useState } from 'react';
 import { createRoot } from 'react-dom/client';
+import { AbstractWalletProvider, useLoginWithAbstract } from '@abstract-foundation/agw-react';
+import { useAccount } from 'wagmi';
+import { abstract } from 'viem/chains';
 import './aura3d.css';
 import './appfix.css';
 
@@ -46,3 +49,19 @@ function Aura3D() {
 
 const root = document.querySelector('#aura-react-root');
 if (root) createRoot(root).render(<Aura3D />);
+
+function WalletBridge() {
+  const { login } = useLoginWithAbstract();
+  const { address } = useAccount();
+  useEffect(() => {
+    window.prooflyLogin = login;
+    return () => { delete window.prooflyLogin; };
+  }, [login]);
+  useEffect(() => {
+    if (address) window.dispatchEvent(new CustomEvent('proofly:account', { detail: address }));
+  }, [address]);
+  return <button id="agwLoginBridge" aria-hidden="true" tabIndex="-1" onClick={login} />;
+}
+
+const walletRoot = document.querySelector('#wallet-react-root');
+if (walletRoot) createRoot(walletRoot).render(<AbstractWalletProvider chain={abstract}><WalletBridge /></AbstractWalletProvider>);
