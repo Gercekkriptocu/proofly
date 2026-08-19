@@ -1,0 +1,58 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Proofly — Your onchain personality</title>
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    <link href="https://fonts.googleapis.com/css2?family=DM+Mono:wght@400;500&family=Space+Grotesk:wght@400;500;600;700&display=swap" rel="stylesheet" />
+    <link rel="stylesheet" href="styles.css" />
+  </head>
+  <body>
+    <div class="noise"></div>
+    <header class="topbar">
+      <a class="brand" href="#top"><span class="brand-mark">✦</span> proofly</a>
+      <nav>
+        <a href="#dna">Your DNA</a>
+        <a href="#badges">Badges</a>
+        <a href="#activity">Activity</a>
+      </nav>
+      <button class="connect-button" id="connectBtn">Connect wallet <span>↗</span></button>
+    </header>
+
+    <main id="top">
+      <section class="hero">
+        <div class="eyebrow"><span class="pulse"></span> ONCHAIN PERSONALITY LAYER</div>
+        <h1>Your wallet<br /><em>has a personality.</em></h1>
+        <p class="hero-copy">Proofly turns your onchain behavior into a living identity — no profile forms, no empty flexes, just proof.</p>
+        <div class="hero-actions">
+          <button class="primary-button" id="scanBtn">Connect & scan <span>→</span></button>
+          <span class="microcopy">Free forever · Abstract ready</span>
+        </div>
+        <p class="connection-status" id="connectionStatus">Connect an Abstract wallet to generate a live proof.</p>
+        <div id="aura-react-root" class="hero-orbit"></div>
+      </section>
+
+      <section class="dashboard hidden" id="dashboard">
+        <div class="section-heading"><div><div class="eyebrow">WALLET SCAN COMPLETE</div><h2 id="walletTitle">Your proof, decoded.</h2></div><div><button class="ghost-button" id="shareBtn">Copy profile ↗</button> <button class="ghost-button" id="shareXBtn">Share on X 𝕏</button></div></div>
+        <div class="identity-card">
+          <div class="identity-main"><div class="avatar">0x<span>7A3</span></div><div><div class="wallet-address" id="walletAddress">—</div><div class="identity-type" id="identity-type">CONNECT WALLET TO BEGIN</div></div></div>
+          <div class="identity-score"><span>PROOFLY SCORE</span><strong id="score">—</strong><small>/ 10</small></div>
+        </div>
+
+        <div class="grid-two" id="dna">
+          <article class="panel stats-panel"><div class="panel-top"><div><div class="eyebrow">LIVE WALLET STATS</div><h3>What the chain can prove</h3></div><span class="season">ABSTRACT MAINNET</span></div><div class="stat-list" id="statList"></div><div class="radar-note"><span class="note-icon">✦</span><span>Every number above is read live from Abstract RPC.</span></div></article>
+          <article class="panel aura-panel"><div class="panel-top"><div><div class="eyebrow">CURRENT AURA</div><h3>Electric violet</h3></div><span class="live-dot">LIVE</span></div><div class="aura-visual"><div class="aura-ring ring-a"></div><div class="aura-ring ring-b"></div><div class="aura-ring ring-c"></div><div class="aura-orb"></div><span class="aura-word">RESTLESS<br /><i>EXPLORER</i></span></div><p class="aura-caption">Your aura shifts as your behavior does. Check back after your next move.</p></article>
+        </div>
+
+        <section class="badges-section" id="badges"><div class="section-heading"><div><div class="eyebrow">PROOF OF BEHAVIOR</div><h2>Badges the chain can verify.</h2></div><button class="filter-button active" data-filter="all">All <span id="badgeCount">—</span></button></div><div class="badge-grid" id="badgeGrid"></div></section>
+        <section class="activity-section" id="activity"><div class="section-heading"><div><div class="eyebrow">NETWORK PROOF</div><h2>Facts from Abstract.</h2></div><span class="onchain-label"><span class="green-dot"></span> <a id="explorerLink" href="https://abscan.org/" target="_blank" rel="noreferrer">View on Abscan ↗</a></span></div><div class="activity-list" id="activityList"></div></section>
+      </section>
+      <section id="protocol-react-root"></section>
+    </main>
+    <div class="toast" id="toast"></div>
+    <script src="app.js"></script>
+    <script type="module" src="/src/main.jsx"></script>
+  </body>
+</html>
